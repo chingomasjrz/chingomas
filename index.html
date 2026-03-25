@@ -1,435 +1,125 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Que Chingomas ⚡ Gomitas enchiladas</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burrito Jrz</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#000;color:#fff;line-height:1.6}
 
-        body {
-            background: #0a0a0a;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: #fff;
-        }
+header{text-align:center;padding:80px 20px;background:radial-gradient(circle,#111,#000)}
 
-        .header {
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid #e11b1b;
-            background: #050505;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
+/* RGB animado */
+@keyframes rgbMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
 
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 900;
-        }
+h1{
+  font-size:4em;
+  background: linear-gradient(270deg,#00ff00,#ffffff,#ff0000,#00ff00);
+  background-size:600% 600%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation: rgbMove 6s ease infinite;
+}
 
-        .logo span {
-            color: #e11b1b;
-            font-size: 3rem;
-        }
+header p{margin-top:15px;color:#aaa;font-size:1.2em}
 
-        .nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 2rem;
-            font-weight: 600;
-        }
+nav{display:flex;justify-content:center;gap:20px;padding:15px;background:#050505;border-bottom:1px solid #222}
+nav a{color:#ccc;text-decoration:none;font-size:.95em}
+nav a:hover{color:#00ff99}
 
-        .nav a:hover {
-            color: #e11b1b;
-        }
+.container{width:90%;max-width:1200px;margin:auto}
+.section{padding:70px 0;border-bottom:1px solid #222}
+.section h2{text-align:center;margin-bottom:40px;font-size:2.3em;color:#00ff99}
 
-        .hero {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
 
-        .hero h1 {
-            font-size: 4.5rem;
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
+.card{background:#111;padding:25px;border-radius:18px;transition:.3s;border:1px solid #222;position:relative}
+.card:hover{transform:translateY(-10px) scale(1.04);border-color:#00ff99;box-shadow:0 0 20px rgba(0,255,150,.35)}
+.card h3{margin-bottom:10px}
+.card p{font-size:.95em;color:#bbb;margin-bottom:15px}
 
-        .hero h1 span {
-            color: #e11b1b;
-        }
+.badge{position:absolute;top:10px;right:10px;background:#00ff99;color:#000;padding:5px 10px;font-size:.8em;border-radius:10px;font-weight:bold}
 
-        .hero p {
-            font-size: 1.5rem;
-            color: #b0b0b0;
-            max-width: 600px;
-            margin: 1rem auto;
-        }
+.offer{background:linear-gradient(90deg,#00ff99,#00cc66);color:#000;text-align:center;padding:20px;font-weight:bold;font-size:1.2em}
 
-        .btn {
-            display: inline-block;
-            background: #e11b1b;
-            color: #0a0a0a;
-            font-weight: 700;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border: 2px solid #e11b1b;
-            font-size: 1.2rem;
-            margin: 0.5rem;
-        }
+.cta{text-align:center;padding:80px 20px}
 
-        .btn:hover {
-            background: transparent;
-            color: #e11b1b;
-        }
+.btn{
+  display:inline-block;
+  padding:18px 50px;
+  font-size:1.2em;
+  background: linear-gradient(270deg,green,white,red,green);
+  background-size:600% 600%;
+  color:black;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  animation: rgbMove 6s ease infinite;
+  transition:.3s;
+}
 
-        .btn-outline {
-            background: transparent;
-            color: #e11b1b;
-        }
+.btn:hover{transform:scale(1.1);box-shadow:0 0 20px rgba(255,255,255,.4)}
 
-        .section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-top: 2px solid #1a1a1a;
-        }
+.extra{padding:60px 20px;text-align:center}
+.extra h2{color:#00ff99;margin-bottom:20px}
+.extra p{color:#bbb;max-width:700px;margin:auto}
 
-        .section-title {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
+footer{background:#050505;padding:30px;text-align:center;color:#777;font-size:.85em}
 
-        .section-title::before, .section-title::after {
-            content: " 🌶️ ";
-            color: #e11b1b;
-        }
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn 1s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
 
-        /* Info de ingredientes */
-        .ingredientes {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-            font-size: 1.3rem;
-        }
-
-        .ingrediente {
-            background: #1a1a1a;
-            padding: 0.8rem 1.5rem;
-            border-left: 5px solid #e11b1b;
-        }
-
-        .ingrediente span {
-            color: #e11b1b;
-            font-weight: 700;
-        }
-
-        .info-destacada {
-            background: #0f0f0f;
-            border: 3px solid #e11b1b;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .whatsapp-btn {
-            display: inline-block;
-            background: #25D366;
-            color: #fff;
-            font-weight: 700;
-            padding: 1.5rem 3rem;
-            text-decoration: none;
-            font-size: 2rem;
-            border-radius: 10px;
-            margin: 1rem 0;
-            border: 2px solid #25D366;
-        }
-
-        .whatsapp-btn:hover {
-            background: transparent;
-            color: #25D366;
-        }
-
-        .productos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .producto {
-            background: #0f0f0f;
-            border: 2px solid #2a2a2a;
-            padding: 2rem;
-            position: relative;
-        }
-
-        .producto:hover {
-            border-color: #e11b1b;
-        }
-
-        .producto h3 {
-            font-size: 2.2rem;
-            color: #e11b1b;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #e11b1b;
-            padding-bottom: 0.5rem;
-        }
-
-        .picor {
-            margin: 1rem 0;
-            font-size: 1.3rem;
-        }
-
-        .chiles {
-            color: #e11b1b;
-            letter-spacing: 5px;
-        }
-
-        .precios {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .precio-item {
-            background: #1a1a1a;
-            padding: 0.5rem 1rem;
-            border-left: 3px solid #e11b1b;
-        }
-
-        .precio-item span {
-            color: #e11b1b;
-            font-weight: 700;
-            margin-left: 0.5rem;
-        }
-
-        .promo {
-            background: #e11b1b20;
-            border: 3px solid #e11b1b;
-            padding: 2rem;
-            text-align: center;
-            margin: 4rem 0;
-        }
-
-        .promo h3 {
-            color: #e11b1b;
-            font-size: 2.5rem;
-        }
-
-        .footer {
-            background: #050505;
-            padding: 3rem 2rem;
-            border-top: 3px solid #e11b1b;
-            text-align: center;
-        }
-
-        .footer .rojo {
-            color: #e11b1b;
-            font-weight: 700;
-        }
-
-        @media (max-width: 700px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            .productos-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <div class="logo">
-            <span>🌶️</span> QUE CHINGOMAS
-        </div>
-        <div class="nav">
-            <a href="#">INICIO</a>
-            <a href="#">GOMITAS</a>
-            <a href="#">CONTACTO</a>
-        </div>
-    </div>
-
-    <div class="hero">
-        <h1>
-            ¡QUÉ <span>CHINGOMAS!</span>
-        </h1>
-        <p>
-            Gomitas enchiladas con chile, chamoy, tajín y limón. El picor que tanto buscas.
-        </p>
-        <a href="#" class="btn">VER GOMITAS</a>
-        <a href="#" class="btn btn-outline">PEDIR POR WHATSAPP</a>
-    </div>
-
-    <div class="section">
-        <div class="ingredientes">
-            <div class="ingrediente"><span>🌶️</span> Chile de árbol</div>
-            <div class="ingrediente"><span>🍋</span> Limón</div>
-            <div class="ingrediente"><span>🧂</span> Tajín</div>
-            <div class="ingrediente"><span>🫙</span> Chamoy</div>
-        </div>
-
-        <div class="info-destacada">
-            <p style="font-size: 1.5rem;">📱 PEDIDOS AL WHATSAPP</p>
-            <a href="https://wa.me/526561322091" class="whatsapp-btn">📞 (656) 132 2091</a>
-            <p style="margin-top: 1rem;">🚚 ENTREGAS SOLO EN CIUDAD JUÁREZ • MÍNIMO 10 PIEZAS</p>
-        </div>
-
-        <h2 class="section-title">NUESTRAS GOMITAS</h2>
-        
-        <div class="productos-grid">
-            <!-- Viboritas -->
-            <div class="producto">
-                <h3>VIBORITAS</h3>
-                <div class="picor">
-                    <span class="chiles">🌶️🌶️🌶️</span> (nivel 3)
-                </div>
-                <p style="color: #ccc;">Viboritas con chile, chamoy, tajín y limón</p>
-                <div class="precios">
-                    <div class="precio-item">50g <span>$30</span></div>
-                    <div class="precio-item">100g <span>$50</span></div>
-                    <div class="precio-item">250g <span>$110</span></div>
-                    <div class="precio-item">½kg <span>$200</span></div>
-                    <div class="precio-item">750g <span>$280</span></div>
-                    <div class="precio-item">1kg <span>$350</span></div>
-                </div>
-            </div>
-
-            <!-- Panditas -->
-            <div class="producto">
-                <h3>PANDITAS</h3>
-                <div class="picor">
-                    <span class="chiles">🌶️🌶️</span> (nivel 2)
-                </div>
-                <p style="color: #ccc;">Ositos bañados en chamoy y tajín</p>
-                <div class="precios">
-                    <div class="precio-item">50g <span>$30</span></div>
-                    <div class="precio-item">100g <span>$50</span></div>
-                    <div class="precio-item">250g <span>$110</span></div>
-                    <div class="precio-item">½kg <span>$200</span></div>
-                    <div class="precio-item">750g <span>$280</span></div>
-                    <div class="precio-item">1kg <span>$350</span></div>
-                </div>
-            </div>
-
-            <!-- Manguitos -->
-            <div class="producto">
-                <h3>MANGUITOS</h3>
-                <div class="picor">
-                    <span class="chiles">🌶️🌶️🌶️🌶️</span> (nivel 4)
-                </div>
-                <p style="color: #ccc;">Mango enchilado con chile de árbol</p>
-                <div class="precios">
-                    <div class="precio-item">50g <span>$30</span></div>
-                    <div class="precio-item">100g <span>$50</span></div>
-                    <div class="precio-item">250g <span>$110</span></div>
-                    <div class="precio-item">½kg <span>$200</span></div>
-                    <div class="precio-item">750g <span>$280</span></div>
-                    <div class="precio-item">1kg <span>$350</span></div>
-                </div>
-            </div>
-
-            <!-- Naranjas -->
-            <div class="producto">
-                <h3>NARANJAS</h3>
-                <div class="picor">
-                    <span class="chiles">🌶️🌶️</span> (nivel 2)
-                </div>
-                <p style="color: #ccc;">Gomitas cítricas con chamoy y limón</p>
-                <div class="precios">
-                    <div class="precio-item">50g <span>$30</span></div>
-                    <div class="precio-item">100g <span>$50</span></div>
-                    <div class="precio-item">250g <span>$110</span></div>
-                    <div class="precio-item">½kg <span>$200</span></div>
-                    <div class="precio-item">750g <span>$280</span></div>
-                    <div class="precio-item">1kg <span>$350</span></div>
-                </div>
-            </div>
-
-            <!-- Tiburones -->
-            <div class="producto">
-                <h3>TIBURONES</h3>
-                <div class="picor">
-                    <span class="chiles">🌶️🌶️🌶️</span> (nivel 3)
-                </div>
-                <p style="color: #ccc;">Tiburones con chile y chamoy</p>
-                <div class="precios">
-                    <div class="precio-item">50g <span>$30</span></div>
-                    <div class="precio-item">100g <span>$50</span></div>
-                    <div class="precio-item">250g <span>$110</span></div>
-                    <div class="precio-item">½kg <span>$200</span></div>
-                    <div class="precio-item">750g <span>$280</span></div>
-                    <div class="precio-item">1kg <span>$350</span></div>
-                </div>
-            </div>
-
-            <!-- Muelas -->
-            <div class="producto">
-                <h3>MUELAS</h3>
-                <div class="picor">
-                    <span class="chiles">🌶️🌶️🌶️🌶️</span> (nivel 4)
-                </div>
-                <p style="color: #ccc;">Muelas enchiladas con extra chamoy</p>
-                <div class="precios">
-                    <div class="precio-item">50g <span>$30</span></div>
-                    <div class="precio-item">100g <span>$50</span></div>
-                    <div class="precio-item">250g <span>$110</span></div>
-                    <div class="precio-item">½kg <span>$200</span></div>
-                    <div class="precio-item">750g <span>$280</span></div>
-                    <div class="precio-item">1kg <span>$350</span></div>
-                </div>
-            </div>
-
-            <!-- Aciditos -->
-            <div class="producto">
-                <h3>ACIDITOS</h3>
-                <div class="picor">
-                    <span class="chiles">🌶️🌶️🌶️🌶️🌶️</span> (nivel 5)
-                </div>
-                <p style="color: #ccc;">Ácidas, con chile de árbol y limón</p>
-                <div class="precios">
-                    <div class="precio-item">50g <span>$30</span></div>
-                    <div class="precio-item">100g <span>$50</span></div>
-                    <div class="precio-item">250g <span>$110</span></div>
-                    <div class="precio-item">½kg <span>$200</span></div>
-                    <div class="precio-item">750g <span>$280</span></div>
-                    <div class="precio-item">1kg <span>$350</span></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="promo">
-            <h3>🔥 PROMO QUE ARDE 🔥</h3>
-            <p style="font-size: 1.5rem;">🎁 A partir de $400 de compra:</p>
-            <p style="color: #e11b1b; font-size: 3rem; font-weight: 800; margin: 1rem 0;">+½kg EXTRA</p>
-            <p style="font-size: 1.3rem;">Por cada $100 adicionales, ¡otro ½kg gratis!</p>
-            <p style="margin-top: 1rem;">Ejemplo: $500 = ½kg extra • $600 = 1kg extra</p>
-        </div>
-
-        <div style="text-align: center; margin: 4rem 0;">
-            <h3 style="color: #e11b1b; font-size: 2.5rem;">📱 PIDE AHORA</h3>
-            <a href="https://wa.me/526561322091" class="whatsapp-btn" style="font-size: 2.5rem;">📞 (656) 132 2091</a>
-            <p style="margin-top: 1.5rem;">🚚 Entregas en Ciudad Juárez • Mínimo 10 piezas</p>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>🌶️ <span class="rojo">QUE CHINGOMAS</span> 🌶️</p>
-        <p>Gomitas enchiladas con chile, chamoy, tajín y limón</p>
-        <p>📱 <span class="rojo">(656) 132 2091</span> • Ciudad Juárez</p>
-        <p style="margin-top: 2rem; color: #666;">© 2025 Que Chingomas - Puro sabor chingón</p>
-    </div>
-</body>
+</style></head><body><header class="fade-in">
+<h1>Burrito Jrz</h1>
+<p>🔥 Sabor auténtico de la calle directo a tu mesa 🔥</p>
+</header><nav>
+<a href="#burritos">Burritos</a>
+<a href="#tortas">Tortas</a>
+<a href="#quesadillas">Quesadillas</a>
+<a href="#bebidas">Bebidas</a>
+<a href="#contacto">Ordenar</a>
+</nav><div class="offer fade-in">
+🎉 PROMO: Por cada $200 MXN de compra llévate GRATIS 1 refresco o cerveza 🍺🥤
+</div><div class="container"><section id="burritos" class="section fade-in">
+<h2>🌯 Burritos</h2>
+<div class="menu-grid">
+<div class="card"><span class="badge">TOP</span><h3>Papas con chorizo</h3><p>Una deliciosa combinación de papas perfectamente sazonadas con chorizo jugoso, preparado al momento para darte ese sabor casero que tanto gusta en Juárez. Ideal para llenarte y disfrutar cada mordida.</p></div>
+<div class="card"><h3>Frijoles con queso</h3><p>El clásico que nunca falla: frijoles suaves acompañados de queso derretido que crea una textura cremosa y un sabor reconfortante en cada bocado.</p></div>
+<div class="card"><h3>Chicharrón prensado</h3><p>Chicharrón prensado cocinado en salsa roja con especias tradicionales, ofreciendo un sabor intenso, jugoso y totalmente irresistible.</p></div>
+</div>
+</section><section id="tortas" class="section fade-in">
+<h2>🥪 Tortas</h2>
+<div class="menu-grid">
+<div class="card"><span class="badge">🔥</span><h3>Torta lagunera</h3><p>Una explosión de sabor norteño con carne jugosa, ingredientes frescos y pan dorado que hacen de esta torta una de las favoritas.</p></div>
+<div class="card"><h3>Torta de carnitas</h3><p>Carnitas suaves y llenas de sabor, acompañadas de ingredientes frescos que resaltan su autenticidad y tradición.</p></div>
+<div class="card"><h3>Pambazo</h3><p>Pan bañado en salsa roja, relleno de ingredientes deliciosos y dorado al punto perfecto para lograr una textura única.</p></div>
+</div>
+</section><section id="quesadillas" class="section fade-in">
+<h2>🧀 Quesadillas</h2>
+<div class="menu-grid">
+<div class="card"><h3>Queso ebra</h3><p>Queso tipo hebra perfectamente derretido que se estira en cada mordida, ideal para los amantes del queso.</p></div>
+<div class="card"><h3>Queso fresco</h3><p>Una opción ligera pero deliciosa, con el sabor tradicional que nunca pasa de moda.</p></div>
+<div class="card"><span class="badge">⭐</span><h3>Quesadilla con chorizo</h3><p>La favorita del menú: queso derretido combinado con chorizo lleno de sabor, creando una mezcla irresistible.</p></div>
+</div>
+</section><section id="bebidas" class="section fade-in">
+<h2>🥤 Bebidas</h2>
+<div class="menu-grid">
+<div class="card"><h3>Coca-Cola</h3><p>El refresco clásico que complementa perfectamente cualquier platillo, siempre bien frío.</p></div>
+<div class="card"><h3>7-Up</h3><p>Refrescante, ligera y perfecta para acompañar tus comidas sin ser pesada.</p></div>
+<div class="card"><h3>Fanta</h3><p>Una bebida dulce y vibrante que aporta un toque divertido a tu comida.</p></div>
+<div class="card"><h3>Cerveza</h3><p>Elige tu cerveza favorita y disfruta una combinación perfecta con nuestros platillos.</p></div>
+</div>
+</section></div><div class="extra fade-in">
+<h2>🔥 ¿Por qué elegir Burrito Jrz?</h2>
+<p>No solo vendemos comida, ofrecemos una experiencia auténtica de sabor callejero de Ciudad Juárez. Cada producto está preparado con ingredientes de calidad, sazón casera y ese toque especial que hace que nuestros clientes siempre regresen.</p>
+</div><div id="contacto" class="cta fade-in">
+<a class="btn" href="https://wa.me/526561322091" target="_blank">🚀 Ordenar ahora</a>
+</div><footer>
+<p>© 2026 Burrito Jrz. Todos los derechos reservados.</p>
+<p>Marca registrada ™ | Uso comercial protegido ©</p>
+<p>Diseñado para negocio local en Ciudad Juárez</p>
+</footer></body>
 </html>
